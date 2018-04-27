@@ -10,6 +10,8 @@ namespace Chiffrement
     {
         static void Main(string[] args)
         {
+            EncodageManager Em = new EncodageManager();
+            Em.Start();
         }
     }
 }
