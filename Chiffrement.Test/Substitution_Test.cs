@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Chiffrement.Test
 {
     [TestClass]
-    public class Substitution
+    public class Substitution_Test
     {
         [TestMethod]
         public void TestMethod1()
