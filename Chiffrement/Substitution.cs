@@ -23,20 +23,61 @@ namespace Chiffrement
             Console.WriteLine("Donner le mot de passe qui permet la substitution");
             String mdp = Console.ReadLine();
             mdp = this.Nettoyage(mdp);
+            string newAlpha = newAlphabet(mdp);
+            string sentenceCrypted = Chiffrer(chaine, newAlpha);
 
-            string res = Codage(chaine, mdp);
-            string res1 = Decodage(chaine, mdp);
+            Console.WriteLine(sentenceCrypted);
+        }
+        /// <summary>
+        /// Create new alphabet with password
+        /// </summary>
+        /// <param name="chaine"></param>
+        /// <returns></returns>
+        public string newAlphabet(string chaine)
+        {
+            string alphabet = "abcdefghikjlmnopqrstuvwxyz";
+            string phraseEnCours = chaine + alphabet;
+            string phraseCrypte = "";
 
-            Console.WriteLine("Votre chaine encodée est : " + res1);
+            foreach (char letter in phraseEnCours)
+            {
+                if (phraseCrypte.IndexOf(letter) == -1)
+                {
+                    phraseCrypte += letter;
+                }
+                else
+                {
+                    phraseCrypte += "";
+                }
+            }
+            return phraseCrypte;
         }
 
-        public string Codage(string chaine, string mdp)
+        public string Chiffrer(string phrase, string alphabet)
         {
-            string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            char Lletter = chaine[-1];
-            int coord = Encoding.Default.GetBytes(Lletter)[0] + 1;
-            int coord = alphabet.Substring(coord, 1);
-            return "";
+            string response = "";
+            char[] alphabetLetter = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+            foreach(char letter in phrase)
+            {
+                if(alphabetLetter.Contains(letter))
+                {
+                    int coord = Array.IndexOf(alphabetLetter, letter);
+                    response += alphabet[coord];
+                }
+                else if (Char.IsWhiteSpace(letter))
+                {
+                    response += " ";
+                }
+                else if (Char.IsPunctuation(letter))
+                {
+                    response += letter;
+                }
+                else
+                {
+                    response += "";
+                }
+            }
+            return response;
         }
 
         public string Decodage(string chaine, string mdp)
