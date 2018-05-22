@@ -23,8 +23,10 @@ namespace Chiffrement
             Console.WriteLine("Donner le mot de passe qui permet la substitution");
             String mdp = Console.ReadLine();
             mdp = this.Nettoyage(mdp);
-            string NexAlpha = newAlphabet(mdp);
+            string newAlpha = newAlphabet(mdp);
             string sentenceCrypted = Chiffrer(chaine, newAlpha);
+
+            Console.WriteLine(sentenceCrypted);
         }
         /// <summary>
         /// Create new alphabet with password
@@ -37,7 +39,7 @@ namespace Chiffrement
             string phraseEnCours = chaine + alphabet;
             string phraseCrypte = "";
 
-            foreach (char letter in phraseCrypte)
+            foreach (char letter in phraseEnCours)
             {
                 if (phraseCrypte.IndexOf(letter) == -1)
                 {
@@ -61,6 +63,14 @@ namespace Chiffrement
                 {
                     int coord = Array.IndexOf(alphabetLetter, letter);
                     response += alphabet[coord];
+                }
+                else if (Char.IsWhiteSpace(letter))
+                {
+                    response += " ";
+                }
+                else if (Char.IsPunctuation(letter))
+                {
+                    response += letter;
                 }
                 else
                 {
