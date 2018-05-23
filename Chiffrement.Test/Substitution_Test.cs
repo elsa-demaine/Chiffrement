@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
 namespace Chiffrement.Test
 {
     [TestClass]
+    [ExcludeFromCodeCoverage]
     public class Substitution_Test
     {
         [TestMethod]
@@ -27,7 +29,7 @@ namespace Chiffrement.Test
 
             Assert.AreEqual(res, "tesingabcdfhjklmopqruvwxyz");
             Assert.IsTrue(res.Length == 26);
-        }
+        }     
 
         [TestMethod]
         public void Test_Chiffrer()
@@ -50,14 +52,13 @@ namespace Chiffrement.Test
         }
 
         [TestMethod]
-        public void Test_Start()
+        public void Test_Nettoyage()
         {
-            //Mock<Substitution> mockSub = new Mock<Substitution>();
-            //mockSub.Setup(e => e.);
+            Substitution substitution = new Substitution();
 
-            //Substitution mockSubstitution = mockSub.Object;
+            string res = substitution.Nettoyage("Un événement à Paris");
 
-            //Assert.IsTrue();
+            Assert.AreEqual(res, "un evenement a paris");
         }
     }
 }
