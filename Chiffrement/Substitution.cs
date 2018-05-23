@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Chiffrement
 {
-    class Substitution
+    public class Substitution
     {
 
         public Substitution()
         {
-            this.Start();
+           
         }
         public void Start()
         {
@@ -35,7 +35,7 @@ namespace Chiffrement
         /// <returns></returns>
         public string newAlphabet(string chaine)
         {
-            string alphabet = "abcdefghikjlmnopqrstuvwxyz";
+            string alphabet = "abcdefghijklmnopqrstuvwxyz";
             string phraseEnCours = chaine + alphabet;
             string phraseCrypte = "";
 

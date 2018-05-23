@@ -20,10 +20,12 @@ namespace Chiffrement
             if(option == "1")
             {
                 Substitution mainSubstitution = new Substitution();
+                mainSubstitution.Start();
             }
             else if(option == "2")
             {
                 Cesar mainCesar = new Cesar();
+                mainCesar.Start();
             }
             else
             {

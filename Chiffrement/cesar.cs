@@ -13,7 +13,6 @@ namespace Chiffrement
         public Cesar()
         {
             Alpha = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
-            this.Start();
         }
 
         /// <summary>
