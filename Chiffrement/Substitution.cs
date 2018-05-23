@@ -9,11 +9,6 @@ namespace Chiffrement
 {
     public class Substitution
     {
-
-        public Substitution()
-        {
-           
-        }
         public void Start()
         {
             Console.WriteLine("Veuillez entrer votre chaine a encoder.");
@@ -22,7 +17,7 @@ namespace Chiffrement
 
             Console.WriteLine("Donner le mot de passe qui permet la substitution");
             String mdp = Console.ReadLine();
-            //mdp = this.Nettoyage(mdp);
+            mdp = this.Nettoyage(mdp);
             string newAlpha = newAlphabet(mdp);
             string sentenceCrypted = Chiffrer(chaine, newAlpha);
 
@@ -78,11 +73,6 @@ namespace Chiffrement
                 }
             }
             return response;
-        }
-
-        public string Decodage(string chaine, string mdp)
-        {
-            return "";
         }
 
         /// <summary>

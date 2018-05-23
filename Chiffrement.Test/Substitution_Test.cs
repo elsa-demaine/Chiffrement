@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
 namespace Chiffrement.Test
 {
     [TestClass]
+    [ExcludeFromCodeCoverage]
     public class Substitution_Test
     {
         [TestMethod]
@@ -54,9 +56,9 @@ namespace Chiffrement.Test
         {
             Substitution substitution = new Substitution();
 
-            string res = substitution.Nettoyage("àB!");
+            string res = substitution.Nettoyage("Un événement à Paris");
 
-            Assert.AreEqual(res, "ab");
+            Assert.AreEqual(res, "un evenement a paris");
         }
     }
 }
