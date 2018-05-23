@@ -14,6 +14,9 @@ namespace Chiffrement
         {
            
         }
+        /// <summary>
+        /// Start substitution and init some variables
+        /// </summary>
         public void Start()
         {
             Console.WriteLine("Veuillez entrer votre chaine a encoder.");
@@ -53,6 +56,12 @@ namespace Chiffrement
             return phraseCrypte;
         }
 
+        /// <summary>
+        /// Chiffre la phrase avec le nouvel alphabet
+        /// </summary>
+        /// <param name="phrase">La phrase à coder</param>
+        /// <param name="alphabet">le nouvel alphabet fait grâce à NewAlphabet()</param>
+        /// <returns>La phrase cryptée</returns>
         public string Chiffrer(string phrase, string alphabet)
         {
             string response = "";
@@ -79,11 +88,7 @@ namespace Chiffrement
             }
             return response;
         }
-
-        public string Decodage(string chaine, string mdp)
-        {
-            return "";
-        }
+        
 
         /// <summary>
         /// Permet de nettoyer les chaines de caractère. Ex: é è ê deviennent e etc... (on garde la ponctuation)
