@@ -22,7 +22,7 @@ namespace Chiffrement
 
             Console.WriteLine("Donner le mot de passe qui permet la substitution");
             String mdp = Console.ReadLine();
-            mdp = this.Nettoyage(mdp);
+            //mdp = this.Nettoyage(mdp);
             string newAlpha = newAlphabet(mdp);
             string sentenceCrypted = Chiffrer(chaine, newAlpha);
 
