@@ -7,8 +7,9 @@ namespace Chiffrement.Test
     public class Cesar_Test
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestCodage()
         {
+            
         }
     }
 }
