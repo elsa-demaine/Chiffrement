@@ -51,6 +51,7 @@ namespace Chiffrement
             Console.WriteLine("De combien voulez vous l'encoder ?");
             bool fonctionne = int.TryParse(Console.ReadLine(), out int decalage);
             string res = Codage(chaine, decalage);
+            var res2 = Decodage(chaine);
             Console.WriteLine("Votre chaine encodé est : " + res);
         }
         /// <summary>
