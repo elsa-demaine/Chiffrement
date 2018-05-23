@@ -52,12 +52,12 @@ namespace Chiffrement.Test
         [TestMethod]
         public void Test_Start()
         {
-            Mock<Substitution> mockSub = new Mock<Substitution>();
-            mockSub.Setup(e => e.);
+            //Mock<Substitution> mockSub = new Mock<Substitution>();
+            //mockSub.Setup(e => e.);
 
-            Substitution mockSubstitution = mockSub.Object;
+            //Substitution mockSubstitution = mockSub.Object;
 
-            Assert.IsTrue();
+            //Assert.IsTrue();
         }
     }
 }
