@@ -24,6 +24,7 @@ namespace Chiffrement
             else if(option == "2")
             {
                 Cesar mainCesar = new Cesar();
+                mainCesar.Start();
             }
             else
             {
